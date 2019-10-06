@@ -1,4 +1,16 @@
-import React, { Fragment, useEffect, useState  } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
+import $ from 'jquery';
+
+const moveToNext = (e) => {
+  var $next = $(e.target).closest('section').next();
+  if ($next.hasClass('engine')) {
+    $next = $next.closest('section').next();
+  }
+  var offset = $next.offset();
+  $('html, body').stop().animate({
+    scrollTop: offset.top
+  }, 800, 'linear');
+}
 
 function App() {
   const [days, setDays] = useState(0);
@@ -46,24 +58,24 @@ function App() {
           </div>
         </div>
         <div className="mbr-arrow hidden-sm-down" aria-hidden="true">
-          <a href="#next">
+          <a href="JavaScript:Void(0)" onClick={(e) => { moveToNext(e)}}>
             <i className="mbri-down mbr-iconfont"></i>
           </a>
         </div>
       </section>
-      <section className="mbr-section content4 cid-qIieWoha50" id="content4-2">
+      <section className="mbr-section content4 cid-qIieWoha50" id="content4-2" style={{ paddingTop: "80px", paddingBottom: "50px"}}>
         <div className="container">
           <div className="media-container-row">
             <div className="title col-12 col-md-8">
               <h2 className="align-center pb-3 mbr-fonts-style display-1">Amritpal Singh</h2>
               <h3 className="align-center mbr-light mbr-fonts-style display-7">
-                s/o S. Mohinder Singh & Sdn. Harjinder Kaur
+                s/o Sdn. Harjinder Kaur & S. Mohinder Singh
               </h3>
             </div>
           </div>
         </div>
       </section>
-      <section className="mbr-section article content9 cid-qIifnNA7oY" id="content9-3">
+      <section className="mbr-section article content9 cid-qIifnNA7oY" id="content9-3" style={{ paddingTop: "35px", paddingBottom: "35px" }}>
         <div className="container">
           <div className="inner-container" style={{ "width": "100%" }}>
             <hr className="line" style={{ "width": "25%" }} />
@@ -73,13 +85,13 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="mbr-section content4 cid-qIifwA2R02" id="content4-4">
+      <section className="mbr-section content4 cid-qIifwA2R02" id="content4-4" style={{ paddingTop: "50px", paddingBottom: "80px" }}>
         <div className="container">
           <div className="media-container-row">
             <div className="title col-12 col-md-8">
               <h2 className="align-center pb-3 mbr-fonts-style display-1">Mandeep Kaur</h2>
               <h3 className="align-center mbr-light mbr-fonts-style display-7">
-                d/o S. Shinder Singh & Sdn. Baljinder Kaur </h3>
+                d/o Sdn. Baljinder Kaur & S. Shinder Singh </h3>
             </div>
           </div>
         </div>
@@ -121,12 +133,12 @@ function App() {
 
                       <div className="media-body">
                         <h4 className="card-title mbr-fonts-style display-5">
-                          C-One Banquet</h4>
+                          C-One Garden</h4>
                       </div>
                     </div>
 
                     <div className="card-box">
-                      <p className="block-text mbr-fonts-style display-7">
+                      <p className="block-text mbr-fonts-style display-7" style={{fontWeight: '600'}}>
                         Near Tehsil Office,
                                     <br />
                         Malerkotla Road, Dhelon,
@@ -139,7 +151,7 @@ function App() {
 
                         <br />
                         <br />
-                        <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=MzZ0dmQwb2cxZ3NuZTY2czRydTFyaTczdmkgdWh1YXJsN2JzbXRxMGlmNGt0c3BxaGs5a29AZw&amp;tmsrc=uhuarl7bsmtq0if4ktspqhk9ko%40group.calendar.google.com">
+                        <a target="blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=MzZ0dmQwb2cxZ3NuZTY2czRydTFyaTczdmkgdWh1YXJsN2JzbXRxMGlmNGt0c3BxaGs5a29AZw&amp;tmsrc=uhuarl7bsmtq0if4ktspqhk9ko%40group.calendar.google.com">
                           Add to your calendar
                           <br />
                           <img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en.gif" /></a>
@@ -167,7 +179,7 @@ function App() {
             <div className="row">
               <div className="col-xs-3 col-sm-3 col-md-3">
                 <span className="number-wrap">
-                  <span className="number display-2">{expire ? '00' : days }</span>
+                  <span className="number display-2">{expire ? '00' : days}</span>
                   <span mbr-text="" className="period display-7">Days</span>
                   <span className="dot">:</span>
                 </span>
@@ -199,7 +211,7 @@ function App() {
 
       <section className="map1 cid-qIiXmYb55q" id="map1-b">
         <div className="google-map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3429.3605829686458!2d75.8480580151837!3d30.73637139250818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39107bcba2a47af3%3A0xc676643b3d239bfc!2sC-One%20Restaurant%20Bar%20%26%20Banquet%20Hall!5e0!3m2!1sen!2sin!4v1569777618977!5m2!1sen!2sin" width="600" height="450" frameborder="0" style={{"border":"0px"}} allowfullscreen=""></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3429.3605829686458!2d75.8480580151837!3d30.73637139250818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39107bcba2a47af3%3A0xc676643b3d239bfc!2sC-One%20Restaurant%20Bar%20%26%20Banquet%20Hall!5e0!3m2!1sen!2sin!4v1569777618977!5m2!1sen!2sin" width="600" height="450" frameborder="0" style={{ "border": "0px" }} allowfullscreen=""></iframe>
         </div>
       </section>
 
